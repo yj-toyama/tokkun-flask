@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask App</title>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <form action="/" method="post">
+        <input type="text" name="text">
+        <input type="submit" value="Submit">
+    </form>
+    {% if text %}
+        <p>入力されたテキスト: {{ text }}</p>
+    {% endif %}
+    <button onclick="callAPI()">Call API</button>
+    <p id="apiResponse"></p>
+</body>
+</html>
